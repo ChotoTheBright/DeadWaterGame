@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=4 uid="uid://cl2mv2sc2883"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88c03"]
+resource_name = "Material.001"
+transparency = 1
+albedo_color = Color(0.545098, 1, 1, 0.345098)
+metallic_specular = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4aijd"]
+_surfaces = [{
+"aabb": AABB(-0.00412283, -0.198774, -0.162747, 0.00833338, 0.375, 0.323333),
+"format": 34359742465,
+"index_count": 51,
+"index_data": PackedByteArray("AQAEAAMABAAAAAIAAAAKAAYAAAALAAoAAQAAAAQACQABAAUAEAABAAkAAQALAAAADgARAA8AAQAOAAsADQABABAACAANAAwAEgAIAAcADgASABEADQAOAAEAEgANAAgADgANABIA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 19,
+"vertex_data": PackedByteArray("kBiHu1hSEj6yowm+0BiHu1hSEj4q1wo+kBiHuwg3Kj6kUeq90BiHu/DrKz6VuOw9sBiHu3x0ND4qUbi7oJRXu/BI+D2CiBg+4JNXu+BZ+D3+Qhe+UPiJO4CLS77n4ro9QPiJO2ijFr486Bs+oPcguzC50j0MUh8+4PYguzC50j2saRy+gPRlOsjpab2THh6+QPiJO5wT+r3EcCQ+YLYmO2zgxr30BiE+ILcmO2zgxr1kiCG+oPiJO5wT+r0cpya+gPFlOsjpab0knR0+oPiJO2ijFr7EtBq+kPiJO4CLS772e7i9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g7ipc"]
+resource_name = "Lens_s_001"
+_surfaces = [{
+"aabb": AABB(-0.00412283, -0.198774, -0.162747, 0.00833338, 0.375, 0.323333),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAAAAAAIA/AAAAAAAAgD8="),
+"format": 34359742487,
+"index_count": 51,
+"index_data": PackedByteArray("AQAEAAMABAAAAAIAAAAKAAYAAAALAAoAAQAAAAQACQABAAUAEAABAAkAAQALAAAADgARAA8AAQAOAAsADQABABAACAANAAwAEgAIAAcADgASABEADQAOAAEAEgANAAgADgANABIA"),
+"material": SubResource("StandardMaterial3D_88c03"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 19,
+"vertex_data": PackedByteArray("kBiHu1hSEj6yowm+0BiHu1hSEj4q1wo+kBiHuwg3Kj6kUeq90BiHu/DrKz6VuOw9sBiHu3x0ND4qUbi7oJRXu/BI+D2CiBg+4JNXu+BZ+D3+Qhe+UPiJO4CLS77n4ro9QPiJO2ijFr486Bs+oPcguzC50j0MUh8+4PYguzC50j2saRy+gPRlOsjpab2THh6+QPiJO5wT+r3EcCQ+YLYmO2zgxr30BiE+ILcmO2zgxr1kiCG+oPiJO5wT+r0cpya+gPFlOsjpab0knR0+oPiJO2ijFr7EtBq+kPiJO4CLS772e7i98gIMff///7/yAgx9////v/ICDH3///+/8gIMff///7/yAgx9////v/ICDH3///+/8gIMff///7/yAgx9////v/ICDH3///+/8gIMff///7/yAgx9////v/ICDH3///+/8gIMff///7/yAgx9////v/ICDH3///+/8gIMff///7/yAgx9////v/ICDH3///+/8gIMff///78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4aijd")
+
+[node name="Lens" type="MeshInstance3D"]
+transform = Transform3D(0.999037, -0.0438634, 0, 0.0438634, 0.999037, 0, 0, 0, 1, 0.0782872, 0.473539, -0.000310465)
+layers = 4
+mesh = SubResource("ArrayMesh_g7ipc")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq12i2h8ammrc"]
+
+[ext_resource type="Shader" path="res://Assets/Scripts/planet.gdshader" id="1_ax32p"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_jeqrf"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u1uyr"]
+render_priority = 0
+shader = ExtResource("1_ax32p")
+shader_parameter/radius = 256.0
+shader_parameter/rimRetraction = 4.0
+shader_parameter/rimBrightness = 1.0
+shader_parameter/rimColor = Color(0.359067, 0.588679, 0.638756, 1)
+shader_parameter/animationSpeed = 0.25
+shader_parameter/distortionStrength = 0.3
+
+[node name="WildHues" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_jeqrf")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_u1uyr")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)

@@ -1,0 +1,16 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://bh6r0kivqws6u"]
+
+[ext_resource type="Texture2D" uid="uid://d3ocbmyu23ji4" path="res://textures/AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="1_adl2h"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w53xj"]
+panorama = ExtResource("1_adl2h")
+
+[sub_resource type="Sky" id="Sky_vilhr"]
+sky_material = SubResource("PanoramaSkyMaterial_w53xj")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_vilhr")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.1

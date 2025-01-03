@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://uqdg5gxw2elh"]
+
+[ext_resource type="Script" path="res://addons/fun_coding/pet.gd" id="1_4ju3g"]
+[ext_resource type="Texture2D" uid="uid://doltrj36do6kr" path="res://addons/fun_coding/gatita.png" id="2_0xbe5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pa4tg"]
+atlas = ExtResource("2_0xbe5")
+region = Rect2(0, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwhud"]
+atlas = ExtResource("2_0xbe5")
+region = Rect2(32, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohmis"]
+atlas = ExtResource("2_0xbe5")
+region = Rect2(64, 0, 32, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j26r"]
+atlas = ExtResource("2_0xbe5")
+region = Rect2(96, 0, 32, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bejbv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pa4tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwhud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohmis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j26r")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_4ju3g")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 5
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_bejbv")
+animation = &"move"
+autoplay = "move"
+frame_progress = 0.22377
+speed_scale = 0.75
+
+[node name="PanicTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CancelPanicTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="PanicTimer" to="." method="_on_PanicTimer_timeout"]
+[connection signal="timeout" from="CancelPanicTimer" to="." method="_on_CancelPanicTimer_timeout"]

@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://bd7k6t3m30oha"
+path="res://.godot/imported/stairs.map-bd1d6c91903b271c05e59e1e422008e2.tres"
+
+[deps]
+
+source_file="res://Assets/Maps/trenchbroom/stairs.map"
+dest_files=["res://.godot/imported/stairs.map-bd1d6c91903b271c05e59e1e422008e2.tres"]
+
+[params]
+
