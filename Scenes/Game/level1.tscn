@@ -1,4 +1,4 @@
-[gd_scene load_steps=231 format=4 uid="uid://cay7b2i1lf23f"]
+[gd_scene load_steps=232 format=4 uid="uid://cay7b2i1lf23f"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/GameControl.gd" id="1_ijg04"]
 [ext_resource type="Shader" path="res://Assets/Scripts/psx_canvas.gdshader" id="2_3d74q"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bmhpxovnfx4u0" path="res://Assets/flame_04.png" id="23_befo6"]
 [ext_resource type="Texture2D" uid="uid://cbyv8ow60nve4" path="res://Assets/smoke_01.png" id="24_5p4kr"]
 [ext_resource type="Texture2D" uid="uid://by25d2smqk27c" path="res://textures/homewalls.png" id="24_bu60d"]
+[ext_resource type="PackedScene" uid="uid://bp53jxronvlf4" path="res://Scenes/BlindCow.tscn" id="25_ohitx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pvw1r"]
 shader = ExtResource("2_3d74q")
@@ -1829,6 +1830,21 @@ grow_vertical = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 1, 155)
 
 [node name="stuff" type="Node3D" parent="Control/SubViewportContainer/SubViewport/LVL1"]
+
+[node name="animales_cows" type="Node3D" parent="Control/SubViewportContainer/SubViewport/LVL1/stuff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89, 0, 7)
+
+[node name="MooMoo" parent="Control/SubViewportContainer/SubViewport/LVL1/stuff/animales_cows" instance=ExtResource("25_ohitx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -7)
+
+[node name="MooMoo2" parent="Control/SubViewportContainer/SubViewport/LVL1/stuff/animales_cows" instance=ExtResource("25_ohitx")]
+transform = Transform3D(0.96155, 0, 0.274631, 0, 1, 0, -0.274631, 0, 0.96155, 0, 0, -7)
+
+[node name="MooMoo3" parent="Control/SubViewportContainer/SubViewport/LVL1/stuff/animales_cows" instance=ExtResource("25_ohitx")]
+transform = Transform3D(0.455312, 0, 0.890332, 0, 1, 0, -0.890332, 0, 0.455312, -5, 0, 5)
+
+[node name="MooMoo4" parent="Control/SubViewportContainer/SubViewport/LVL1/stuff/animales_cows" instance=ExtResource("25_ohitx")]
+transform = Transform3D(-0.670232, 0, -0.742151, 0, 1, 0, 0.742151, 0, -0.670232, 10, 0, 1)
 
 [node name="lights" type="Node3D" parent="Control/SubViewportContainer/SubViewport/LVL1/stuff"]
 
@@ -4309,5 +4325,5 @@ libraries = {
 "": SubResource("AnimationLibrary_88her")
 }
 
-[connection signal="door_interact" from="Control/SubViewportContainer/SubViewport/LVL1/stuff/HouseInterior/DoorInt" to="Control/SubViewportContainer/SubViewport/LVL1" method="door_transit" flags=3 binds= [1]]
-[connection signal="door_interact" from="Control/SubViewportContainer/SubViewport/LVL1/stuff/Houses/playerhouse/Door_1" to="Control/SubViewportContainer/SubViewport/LVL1" method="door_transit" flags=3 binds= [0]]
+[connection signal="door_interact" from="Control/SubViewportContainer/SubViewport/LVL1/stuff/HouseInterior/DoorInt" to="Control/SubViewportContainer/SubViewport/LVL1" method="player_home" flags=3 binds= [1]]
+[connection signal="door_interact" from="Control/SubViewportContainer/SubViewport/LVL1/stuff/Houses/playerhouse/Door_1" to="Control/SubViewportContainer/SubViewport/LVL1" method="player_home" flags=3 binds= [0]]
