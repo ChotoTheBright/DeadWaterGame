@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bave8lu4m31y2"
-path.s3tc="res://.godot/imported/tile16.png-46980dfaa9cb9192f2f4600e0835e563.s3tc.ctex"
+uid="uid://bsk6oiqf77i8j"
+path.s3tc="res://.godot/imported/treePine_large_treeB.png-85c5676c5d1434a3f6302e4f3cf13c60.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "1977b1da949c826d986a2775d667d975"
+}
 
 [deps]
 
-source_file="res://textures/tile16.png"
-dest_files=["res://.godot/imported/tile16.png-46980dfaa9cb9192f2f4600e0835e563.s3tc.ctex"]
+source_file="res://Assets/treePine_large_treeB.png"
+dest_files=["res://.godot/imported/treePine_large_treeB.png-85c5676c5d1434a3f6302e4f3cf13c60.s3tc.ctex"]
 
 [params]
 
