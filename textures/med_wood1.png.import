@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iemvjxqn5nor"
-path.s3tc="res://.godot/imported/walltex3.png-29995b40a423e1482582c57c36f0bf3c.s3tc.ctex"
+uid="uid://dqg6gfw3cyxtp"
+path.s3tc="res://.godot/imported/med_wood1.png-3f28fa573d69e311c794d1efad80eb45.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/walltex3.png"
-dest_files=["res://.godot/imported/walltex3.png-29995b40a423e1482582c57c36f0bf3c.s3tc.ctex"]
+source_file="res://textures/med_wood1.png"
+dest_files=["res://.godot/imported/med_wood1.png-3f28fa573d69e311c794d1efad80eb45.s3tc.ctex"]
 
 [params]
 

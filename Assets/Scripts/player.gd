@@ -10,6 +10,7 @@ class_name MovementController
 var direction := Vector3()
 var input_axis := Vector2()
 var is_sprinting: bool = false
+var return_pos : Vector3
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 @onready var gravity: float = (ProjectSettings.get_setting("physics/3d/default_gravity") 
 		* gravity_multiplier)

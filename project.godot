@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="DevtoberGameJam"
+config/name="DeadWater"
+config/description="orig. started for the Devtober Game Jam"
 run/main_scene="res://Scenes/Menus/MainMenu/MainMenuScene.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 1)
@@ -19,6 +20,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SaveSystem="*res://addons/save_system/save_system.gd"
 Pause="*res://addons/Pause.gd"
 
 [dotnet]
@@ -27,7 +29,7 @@ project/assembly_name="MonoPrototypeProject"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/fun_coding/plugin.cfg")
+enabled=PackedStringArray("res://addons/fun_coding/plugin.cfg", "res://addons/save_system/plugin.cfg")
 
 [global_group]
 

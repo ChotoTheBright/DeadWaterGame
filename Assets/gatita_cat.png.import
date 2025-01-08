@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iemvjxqn5nor"
-path.s3tc="res://.godot/imported/walltex3.png-29995b40a423e1482582c57c36f0bf3c.s3tc.ctex"
+uid="uid://2hj1i0yu6j6x"
+path.s3tc="res://.godot/imported/gatita_cat.png-080bf8a6684f2d05e7d117c23b8bedec.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "9643369458f110ac9d5da1a7a987170f"
+}
 
 [deps]
 
-source_file="res://textures/walltex3.png"
-dest_files=["res://.godot/imported/walltex3.png-29995b40a423e1482582c57c36f0bf3c.s3tc.ctex"]
+source_file="res://Assets/gatita_cat.png"
+dest_files=["res://.godot/imported/gatita_cat.png-080bf8a6684f2d05e7d117c23b8bedec.s3tc.ctex"]
 
 [params]
 

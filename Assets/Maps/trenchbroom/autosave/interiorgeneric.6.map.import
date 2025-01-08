@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://c06d5g8tdkjxm"
+path="res://.godot/imported/interiorgeneric.6.map-b17f1aa560178d31b49fd7f5560d85e8.tres"
+
+[deps]
+
+source_file="res://Assets/Maps/trenchbroom/autosave/interiorgeneric.6.map"
+dest_files=["res://.godot/imported/interiorgeneric.6.map-b17f1aa560178d31b49fd7f5560d85e8.tres"]
+
+[params]
+
