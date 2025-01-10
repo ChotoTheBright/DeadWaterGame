@@ -86,7 +86,7 @@ bind/16/bone = -1
 bind/16/pose = Transform3D(0.075387, -0.225652, -0.971287, 9.31322e-09, -0.974058, 0.226296, -0.997154, -0.0170598, -0.0734314, -2.32969, 1.27021, -0.677557)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_da0ut"]
-size = Vector3(1.51862, 5, 3.53761)
+size = Vector3(1.51862, 6.6991, 3.53761)
 
 [node name="MooMoo" type="CharacterBody3D"]
 script = ExtResource("1_6yxqf")
@@ -97,5 +97,5 @@ skin = SubResource("Skin_yww8a")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0404358, 1.76492, -0.431595)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0404358, 1.76492, 0.417953)
 shape = SubResource("BoxShape3D_da0ut")

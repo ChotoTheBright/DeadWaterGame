@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvlbqn8b8vide"
-path.s3tc="res://.godot/imported/concrete_L3.png-f2d96d87b65f2d73f0679c9cfe24d166.s3tc.ctex"
+uid="uid://mq6ht3mwesmd"
+path.s3tc="res://.godot/imported/PSX_Forest_AssetCollection_byStarkCrafts_12.png-29d00f849d09d61d908b303c549ec85e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "7ece5a6d69d58fe535ee619376b585b9"
+}
 
 [deps]
 
-source_file="res://textures/concrete_L3.png"
-dest_files=["res://.godot/imported/concrete_L3.png-f2d96d87b65f2d73f0679c9cfe24d166.s3tc.ctex"]
+source_file="res://Assets/PSX_Forest_AssetCollection_byStarkCrafts_12.png"
+dest_files=["res://.godot/imported/PSX_Forest_AssetCollection_byStarkCrafts_12.png-29d00f849d09d61d908b303c549ec85e.s3tc.ctex"]
 
 [params]
 

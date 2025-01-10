@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvlbqn8b8vide"
-path.s3tc="res://.godot/imported/concrete_L3.png-f2d96d87b65f2d73f0679c9cfe24d166.s3tc.ctex"
+uid="uid://dy3jyabyf6tpw"
+path.s3tc="res://.godot/imported/props_tex_brazier_stone.png-95f5faa04f842002e5f8c0f3c241fc45.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "3536ff1f83f257f384ccf81891376db8"
+}
 
 [deps]
 
-source_file="res://textures/concrete_L3.png"
-dest_files=["res://.godot/imported/concrete_L3.png-f2d96d87b65f2d73f0679c9cfe24d166.s3tc.ctex"]
+source_file="res://Assets/props_tex_brazier_stone.png"
+dest_files=["res://.godot/imported/props_tex_brazier_stone.png-95f5faa04f842002e5f8c0f3c241fc45.s3tc.ctex"]
 
 [params]
 

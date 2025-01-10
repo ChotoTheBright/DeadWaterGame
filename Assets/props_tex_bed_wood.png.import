@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvlbqn8b8vide"
-path.s3tc="res://.godot/imported/concrete_L3.png-f2d96d87b65f2d73f0679c9cfe24d166.s3tc.ctex"
+uid="uid://dua2iq3elnvk1"
+path.s3tc="res://.godot/imported/props_tex_bed_wood.png-fb03073a9acb548ab236094c763087f2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "841fc6bd39f2f73a18cc79b17b942abe"
+}
 
 [deps]
 
-source_file="res://textures/concrete_L3.png"
-dest_files=["res://.godot/imported/concrete_L3.png-f2d96d87b65f2d73f0679c9cfe24d166.s3tc.ctex"]
+source_file="res://Assets/props_tex_bed_wood.png"
+dest_files=["res://.godot/imported/props_tex_bed_wood.png-fb03073a9acb548ab236094c763087f2.s3tc.ctex"]
 
 [params]
 

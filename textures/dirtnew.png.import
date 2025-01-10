@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvlbqn8b8vide"
-path.s3tc="res://.godot/imported/concrete_L3.png-f2d96d87b65f2d73f0679c9cfe24d166.s3tc.ctex"
+uid="uid://ddpvpb6p64jbb"
+path.s3tc="res://.godot/imported/dirtnew.png-d7ec764f753dc9ab213b15278effcadf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/concrete_L3.png"
-dest_files=["res://.godot/imported/concrete_L3.png-f2d96d87b65f2d73f0679c9cfe24d166.s3tc.ctex"]
+source_file="res://textures/dirtnew.png"
+dest_files=["res://.godot/imported/dirtnew.png-d7ec764f753dc9ab213b15278effcadf.s3tc.ctex"]
 
 [params]
 
