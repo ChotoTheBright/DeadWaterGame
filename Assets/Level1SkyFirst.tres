@@ -1,15 +1,44 @@
 [gd_resource type="Environment" load_steps=4 format=3 uid="uid://bh6r0kivqws6u"]
 
-[ext_resource type="Texture2D" uid="uid://d3ocbmyu23ji4" path="res://textures/AllSkyFree_Sky_EpicBlueSunset_Equirect.png" id="1_adl2h"]
+[ext_resource type="Shader" path="res://Assets/test_sky.gdshader" id="1_6he6r"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w53xj"]
-panorama = ExtResource("1_adl2h")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pkkhn"]
+shader = ExtResource("1_6he6r")
+shader_parameter/day_top_color = Color(0.0566986, 0.398745, 0.399138, 1)
+shader_parameter/day_bottom_color = Color(0.172594, 0.865301, 0.725085, 1)
+shader_parameter/sunset_top_color = Color(0.87476, 0.764257, 0.25587, 1)
+shader_parameter/sunset_bottom_color = Color(0.210788, 0.803094, 0.587989, 1)
+shader_parameter/night_top_color = Color(0.230913, 0.488047, 0.403794, 1)
+shader_parameter/night_bottom_color = Color(0.1, 0, 0.2, 1)
+shader_parameter/horizon_color = Color(0.227451, 0.156863, 0.588235, 1)
+shader_parameter/horizon_blur = 0.05
+shader_parameter/sun_color = Color(10, 8, 1, 1)
+shader_parameter/sun_sunset_color = Color(10, 0, 0, 1)
+shader_parameter/sun_size = 0.01
+shader_parameter/sun_blur = 10.0
+shader_parameter/moon_color = Color(1, 0.95, 0.7, 1)
+shader_parameter/moon_size = 0.06
+shader_parameter/moon_blur = 0.1
+shader_parameter/clouds_edge_color = Color(1, 1, 1, 1)
+shader_parameter/clouds_top_color = Color(1, 1, 1, 1)
+shader_parameter/clouds_middle_color = Color(1, 1, 1, 1)
+shader_parameter/clouds_bottom_color = Color(1, 1, 1, 1)
+shader_parameter/clouds_speed = 4.0
+shader_parameter/clouds_direction = 0.2
+shader_parameter/clouds_scale = 3.0
+shader_parameter/clouds_cutoff = 0.3
+shader_parameter/clouds_fuzziness = 0.5
+shader_parameter/clouds_weight = 0.0
+shader_parameter/clouds_blur = 0.25
+shader_parameter/stars_speed = 1.0
+shader_parameter/overwritten_time = 0.0
 
 [sub_resource type="Sky" id="Sky_vilhr"]
-sky_material = SubResource("PanoramaSkyMaterial_w53xj")
+sky_material = SubResource("ShaderMaterial_pkkhn")
 
 [resource]
 background_mode = 2
+background_energy_multiplier = 0.8
 sky = SubResource("Sky_vilhr")
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_sky_contribution = 0.0

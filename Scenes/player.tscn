@@ -220,3 +220,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.45, -3)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_0qu2d")
+
+[node name="Hurt" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Heal" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Hurt" to="." method="hurt_player" flags=3]
+[connection signal="timeout" from="Heal" to="." method="health_restore" flags=3]

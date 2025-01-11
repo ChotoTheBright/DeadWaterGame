@@ -13,6 +13,7 @@ extends Node3D
 @onready var vp_camera: Camera3D = viewport.get_node("Camera3D")
 @export var cam_up: bool = false#true
 
+var hurt_player: bool = false
 var cam_zoom: bool = false
 var bobtimes = [0,0,0]
 var Q_bobtime : float = 0.0
@@ -162,7 +163,7 @@ func calc_bob_classic():
 	
 	vel = player.velocity
 	Q_bob = sqrt(vel[0] * vel[0] + vel[2] * vel[2]) * ql_bob
-	Q_bob = Q_bob * 0.3 + Q_bob * 0.7 * sin(cycle)
+	Q_bob = Q_bob * 0.3 + Q_bob * 0.35 * sin(cycle)
 	Q_bob = clamp(Q_bob, -7.0, 4.0)
 	
 	return Q_bob
@@ -218,9 +219,9 @@ func view_model_sway():
 
 func view_model_bob():
 	for i in range(3):
-		view_item.transform.origin[i] += bobRight * 0.25 * transform.basis.x[i] #0.25
-		view_item.transform.origin[i] += bobUp * 0.125 * transform.basis.y[i] # 0.125
-		view_item.transform.origin[i] += bobForward * 0.06125 * transform.basis.z[i] #0.06125
+		view_item.transform.origin[i] += bobRight * 0.1 * transform.basis.x[i] #0.25
+		view_item.transform.origin[i] += bobUp * 0.1 * transform.basis.y[i] # 0.125
+		view_item.transform.origin[i] += bobForward * 0.03125 * transform.basis.z[i] #0.06125
 
 func velocity_roll():
 	var side : float
@@ -257,6 +258,7 @@ func item_close_view():
 		lens_blue.visible = false
 		lens.visible = true
 		await get_tree().create_timer(0.8).timeout #0.9
+		player.dmg_timer.start()
 		vp_sprite.visible = true
 		viewport.set_update_mode(viewport.UPDATE_WHEN_VISIBLE)#2
 	elif cam_zoom == true: #ZOOMED IN#
@@ -268,16 +270,18 @@ func item_close_view():
 		lens_blue.visible = true
 		lens.visible = false
 		await get_tree().create_timer(0.75).timeout #0.9
+		player.dmg_timer.stop()
+		player.heal_timer.start()
 		vp_sprite.visible = false
 		viewport.set_update_mode(viewport.UPDATE_DISABLED)#0
  
 func item_raise():
 	var _tween = create_tween()
-	if cam_up == false: #the camera is down
+	if cam_up == false: #the lens is down
 		_tween.tween_property(view_item, "position", Vector3(0.25, -0.4, -0.5),0.5).from_current()
 		viewmodel_origin = Vector3(0.25, -0.4, -0.5)
 		cam_up = true
-	elif cam_up == true:  #the camera is up
+	elif cam_up == true:  #the lens is up
 		_tween.tween_property(view_item, "position", Vector3(0.0,-1.0,0.0),0.5).from_current()
 		viewmodel_origin = Vector3(0.0,-1.0,0.0)
 		cam_up = false

@@ -2,29 +2,32 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bave8lu4m31y2"
-path.bptc="res://.godot/imported/tile16.png-46980dfaa9cb9192f2f4600e0835e563.bptc.ctex"
+uid="uid://68p2cgo1j8bf"
+path.s3tc="res://.godot/imported/lamppost_tire_iron_diffuse.png-481e219929c1becc6822b87251de9af3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "c3b41ca823249339e98a17b0eef1c06d"
+}
 
 [deps]
 
-source_file="res://textures/tile16.png"
-dest_files=["res://.godot/imported/tile16.png-46980dfaa9cb9192f2f4600e0835e563.bptc.ctex"]
+source_file="res://Assets/lamppost_tire_iron_diffuse.png"
+dest_files=["res://.godot/imported/lamppost_tire_iron_diffuse.png-481e219929c1becc6822b87251de9af3.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
+roughness/mode=0
 roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false

@@ -7,13 +7,17 @@ class_name MovementController
 @export var deceleration := 10
 @export_range(0.0, 1.0, 0.05) var air_control := 0.3
 @export var jump_height := 10
+@onready var head = $Head
+@onready var dmg_timer = $Hurt
+@onready var heal_timer = $Heal
+@onready var health := 100
+# Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
+@onready var gravity: float = (ProjectSettings.get_setting("physics/3d/default_gravity")*gravity_multiplier)
+
 var direction := Vector3()
 var input_axis := Vector2()
 var is_sprinting: bool = false
-var return_pos : Vector3
-# Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
-@onready var gravity: float = (ProjectSettings.get_setting("physics/3d/default_gravity") 
-		* gravity_multiplier)
+
 
 func _input(_event):
 	if Input.is_action_just_pressed("shift"):
@@ -24,6 +28,7 @@ func _input(_event):
 
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta):
+	
 	input_axis = Input.get_vector(&"movement_down", &"movement_up",
 			&"movement_left", &"movement_right")
 	
@@ -70,3 +75,17 @@ func accelerate(delta: float) -> void:
 	
 	velocity.x = temp_vel.x
 	velocity.z = temp_vel.z
+
+func hurt_player():
+	health = health - 5
+	print(health)
+	print("this hurts you, dont it!")
+
+func health_restore():
+	if health >= 100:
+		heal_timer.stop()
+		print("back to full health")
+	else:
+		health = health + 2
+		print(health)
+		print("recovering health")

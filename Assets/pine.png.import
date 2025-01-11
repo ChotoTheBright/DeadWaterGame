@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bave8lu4m31y2"
-path.bptc="res://.godot/imported/tile16.png-46980dfaa9cb9192f2f4600e0835e563.bptc.ctex"
+uid="uid://ci3bajfwpllk"
+path.s3tc="res://.godot/imported/pine.png-6f1937ed65b72dbda8675a50d5f5ce50.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,20 +11,20 @@ metadata={
 
 [deps]
 
-source_file="res://textures/tile16.png"
-dest_files=["res://.godot/imported/tile16.png-46980dfaa9cb9192f2f4600e0835e563.bptc.ctex"]
+source_file="res://Assets/pine.png"
+dest_files=["res://.godot/imported/pine.png-6f1937ed65b72dbda8675a50d5f5ce50.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
+roughness/mode=0
 roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false

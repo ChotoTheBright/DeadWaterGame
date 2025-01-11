@@ -34,6 +34,7 @@ uniform sampler2D slope_albedo : hint_default_white;
 uniform sampler2D slope_normal : hint_normal;
 uniform float slope_uv_scale = 1.0;
 uniform float slope_normal_scale : hint_range(0.0, 1.0);
+uniform sampler2D texture_filter : filter_nearest_mipmap_anisotropic;
 
 group_uniforms properties;
 uniform float flat_specular : hint_range(0.0, 1.0);
