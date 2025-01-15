@@ -7,7 +7,7 @@ uniform float MaxOpacity : hint_range(0, 1) = 1.0;
 uniform float MinimumOpacity : hint_range(.5, 1) = 0.0;
 
 void fragment() {
-    vec4 tex_color = texture(TEXTURE, UV); 
+    vec4 tex_color = texture(TEXTURE, UV);
 
     float base_alpha = tex_color.a; // Use the texture's alpha channel.
     float time_based_factor = sin(Frequency * TIME);

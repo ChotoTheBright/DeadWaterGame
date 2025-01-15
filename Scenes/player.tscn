@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://bunhe21aa4wwq"]
+[gd_scene load_steps=22 format=4 uid="uid://bunhe21aa4wwq"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/player.gd" id="1_dlm38"]
 [ext_resource type="Script" path="res://Assets/Scripts/view.gd" id="2_ost0o"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cl2mv2sc2883" path="res://Scenes/BlueLens.tscn" id="6_barps"]
 [ext_resource type="Script" path="res://Assets/Scripts/use.gd" id="7_0do07"]
 [ext_resource type="PackedScene" uid="uid://cnkiohlrjhdiw" path="res://Scenes/MagicLens.tscn" id="7_vbojw"]
+[ext_resource type="PackedScene" uid="uid://g0syvm6611fk" path="res://Scenes/BrokenFX.tscn" id="8_jdmvl"]
 [ext_resource type="Shader" path="res://Assets/Scripts/retro.gdshader" id="8_jmqqp"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3uhdb"]
@@ -180,10 +181,12 @@ skeleton = NodePath("../HartSight")
 wait_time = 1.02
 one_shot = true
 
+[node name="BrokenFX" parent="Head/Camera3D/HartSight/HartSight" instance=ExtResource("8_jdmvl")]
+transform = Transform3D(1, 0, 0, 0, 0.990267, -0.139173, 0, 0.139173, 0.990267, 0, 0.077, -0.2)
+
 [node name="Sprite3D" type="Sprite3D" parent="Head/Camera3D/HartSight"]
 editor_description = "cam -- 0.007, 0.275, -0.055"
-transform = Transform3D(-0.0369952, -0.000655243, -7.69353e-06, -0.00059057, 0.0409594, -0.00207645, 3.02394e-05, -0.00170237, -0.0499569, -0.000159625, 0.0705099, -0.0507013)
-visible = false
+transform = Transform3D(-0.0369953, -0.000671225, -7.68991e-06, -0.000590571, 0.0419584, -0.00207645, 3.02417e-05, -0.00174389, -0.0499569, -0.000159625, 0.0683731, -0.0510016)
 layers = 4
 flip_h = true
 texture = SubResource("ViewportTexture_luh17")

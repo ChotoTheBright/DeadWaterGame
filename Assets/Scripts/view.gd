@@ -82,6 +82,11 @@ func _ready():
 	FX1.emitting = true
 
 func _physics_process(delta):
+	if player.is_dead: #
+		camera.rotation_degrees.z = 80
+		transform.origin = Vector3(0.0, -1.6, 0.0)
+		return
+	
 	deltaTime = delta
 
 	vp_camera.global_transform = camera_player.global_transform
@@ -115,7 +120,7 @@ func _input(event):
 		player.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
 
 	if Input.is_action_just_pressed("cam_view") and lens_timer.is_stopped():
-		item_close_view() 
+		item_close_view()
 
 	if Input.is_action_just_pressed("raise_cam"):
 		item_raise()
@@ -261,6 +266,7 @@ func item_close_view():
 		player.dmg_timer.start()
 		vp_sprite.visible = true
 		viewport.set_update_mode(viewport.UPDATE_WHEN_VISIBLE)#2
+
 	elif cam_zoom == true: #ZOOMED IN#
 		lens_timer.start()
 		_tween.tween_property(view_item, "position", Vector3(0.25, -0.4, -0.5),0.5).from_current()
@@ -276,6 +282,8 @@ func item_close_view():
 		viewport.set_update_mode(viewport.UPDATE_DISABLED)#0
  
 func item_raise():
+	if cam_zoom == true: 
+			return
 	var _tween = create_tween()
 	if cam_up == false: #the lens is down
 		_tween.tween_property(view_item, "position", Vector3(0.25, -0.4, -0.5),0.5).from_current()

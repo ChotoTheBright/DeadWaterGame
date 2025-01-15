@@ -1,23 +1,36 @@
 extends CharacterBody3D
 class_name MovementController
 
+signal health_effect1
+@warning_ignore("unused_signal")
+signal health_effect2
+@warning_ignore("unused_signal")
+signal health_effect3
+
 @export var gravity_multiplier := 3.0
 @export var speed := 10
 @export var acceleration := 8
 @export var deceleration := 10
 @export_range(0.0, 1.0, 0.05) var air_control := 0.3
 @export var jump_height := 10
+
+@onready var MAIN = get_tree().get_nodes_in_group("primenode")[0]
+@onready var LVL = get_tree().get_nodes_in_group("level")[0]
 @onready var head = $Head
 @onready var dmg_timer = $Hurt
 @onready var heal_timer = $Heal
+@onready var lensbreak = $Head/Camera3D/HartSight/HartSight/BrokenFX
 @onready var health := 100
 # Get the gravity from the project settings to be synced with RigidDynamicBody nodes.
 @onready var gravity: float = (ProjectSettings.get_setting("physics/3d/default_gravity")*gravity_multiplier)
 
+var is_dead: bool = false
 var direction := Vector3()
 var input_axis := Vector2()
 var is_sprinting: bool = false
 
+func _ready():
+	health_effect1.connect(LVL.visualfx)
 
 func _input(_event):
 	if Input.is_action_just_pressed("shift"):
@@ -25,10 +38,12 @@ func _input(_event):
 			is_sprinting = false
 		elif !is_sprinting:
 			is_sprinting = true
+	if Input.is_action_just_pressed("Kill"):
+		#kill_player()
+		spawn_FX()
 
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta):
-	
 	input_axis = Input.get_vector(&"movement_down", &"movement_up",
 			&"movement_left", &"movement_right")
 	
@@ -50,6 +65,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func direction_input() -> void:
+	if is_dead:
+		return
 	direction = Vector3()
 	var aim: Basis = get_global_transform().basis
 	direction = aim.z * -input_axis.x + aim.x * input_axis.y
@@ -80,6 +97,12 @@ func hurt_player():
 	health = health - 5
 	print(health)
 	print("this hurts you, dont it!")
+	if health == 80:
+		emit_signal("health_effect1")
+	elif health == 40:
+		emit_signal("health_effect2")
+	elif health == 20:
+		emit_signal("health_effect3")
 
 func health_restore():
 	if health >= 100:
@@ -89,3 +112,10 @@ func health_restore():
 		health = health + 2
 		print(health)
 		print("recovering health")
+
+func kill_player():
+	health = 0
+	is_dead = true
+
+func spawn_FX():
+	lensbreak.emitting = true

@@ -4,8 +4,6 @@ extends Node3D
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var MAIN = get_tree().get_nodes_in_group("primenode")[0]
 @onready var animplayer = MAIN.get_node("Control/fade/anim")
-@onready var game_control = get_parent()
-
 #---#
 #---#
 @onready var house1 = $HousesExt/House1/warpspot
@@ -35,7 +33,7 @@ extends Node3D
 #-----------------------#
 #----NPC Houses----#
 #-----------------------#
-@onready var NPChouse1 = $STYLE1/NPCHouseInt1/warpspot #
+@onready var NPChouse1 = $STYLE1/NPCHouseInt1/warpspot
 @onready var NPChouse2 = $STYLE1/NPCHouseInt2/warpspot
 @onready var NPChouse3 = $STYLE1/NPCHouseInt3/warpspot
 @onready var NPChouse4 = $STYLE1/NPCHouseInt4/warpspot
@@ -120,7 +118,7 @@ func door_transit(house: int, enter: bool):
 				player.set_global_transform(NPChouse11.global_transform)
 			else:
 				player.set_global_transform(house11.global_transform)
-		11:
+		11:#----------------------------------------------------------------------#
 			if enter:
 				player.set_global_transform(NPChouse12.global_transform)
 			else:
@@ -145,7 +143,7 @@ func door_transit(house: int, enter: bool):
 				player.set_global_transform(NPChouse16.global_transform)
 			else:
 				player.set_global_transform(house16.global_transform)
-		16:
+		16:#----------------------------------------------------------------------#
 			if enter:
 				player.set_global_transform(NPChouse17.global_transform)
 			else:
@@ -165,7 +163,7 @@ func door_transit(house: int, enter: bool):
 				player.set_global_transform(NPChouse20.global_transform)
 			else:
 				player.set_global_transform(house20.global_transform)
-		20:
+		20:#----------------------------------------------------------------------#
 			if enter:
 				player.set_global_transform(NPChouse21.global_transform)
 			else:

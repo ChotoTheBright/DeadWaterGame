@@ -31,3 +31,9 @@ func player_home(interior: int): #for the player house
 			await get_tree().create_timer(1.05).timeout
 			player.global_transform = ext_warp.global_transform
 	anim_player.play("fade")
+
+
+func visualfx():
+	$retroFX2_1.show()
+	print("there isn't a witch in the world who hasn't laughed at mommy fortuna")
+	pass

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://g0syvm6611fk"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p3rbd"]
+emission_shape_scale = Vector3(0.1, 0.1, 0.1)
+emission_shape = 2
+emission_sphere_radius = 1.0
+direction = Vector3(0, 0, 1)
+initial_velocity_max = 20.0
+gravity = Vector3(0, -6, 1)
+radial_accel_min = -2.23517e-06
+radial_accel_max = 8.0
+attractor_interaction_enabled = false
+turbulence_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23a5i"]
+resource_name = "Material.001"
+transparency = 1
+albedo_color = Color(0.545098, 1, 1, 0.345098)
+metallic_specular = 0.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_y32p1"]
+material = SubResource("StandardMaterial3D_23a5i")
+size = Vector3(0.1, 0.1, 0.01)
+
+[node name="BrokenFX" type="GPUParticles3D"]
+emitting = false
+amount = 48
+one_shot = true
+explosiveness = 0.5
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_p3rbd")
+draw_pass_1 = SubResource("PrismMesh_y32p1")
