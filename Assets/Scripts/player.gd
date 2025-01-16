@@ -38,12 +38,12 @@ func _input(_event):
 			is_sprinting = false
 		elif !is_sprinting:
 			is_sprinting = true
-	if Input.is_action_just_pressed("Kill"):
-		#kill_player()
-		spawn_FX()
 
 # Called every physics tick. 'delta' is constant
 func _physics_process(delta):
+	if is_dead:
+		return
+	
 	input_axis = Input.get_vector(&"movement_down", &"movement_up",
 			&"movement_left", &"movement_right")
 	
@@ -94,28 +94,39 @@ func accelerate(delta: float) -> void:
 	velocity.z = temp_vel.z
 
 func hurt_player():
-	health = health - 5
-	print(health)
-	print("this hurts you, dont it!")
+	health = health - 10#5
+	print(health)#debug
+	print("this hurts you, dont it!")#debug
 	if health == 80:
 		emit_signal("health_effect1")
 	elif health == 40:
 		emit_signal("health_effect2")
 	elif health == 20:
 		emit_signal("health_effect3")
+	if health <= 0:
+		dmg_timer.stop()
+		print("player is dead.") #debug
+		kill_player()
+		#set state for dead player here?
 
 func health_restore():
 	if health >= 100:
 		heal_timer.stop()
-		print("back to full health")
+		print("back to full health") #debug
 	else:
 		health = health + 2
-		print(health)
-		print("recovering health")
+		print(health) #debug
+		print("recovering health") #debug
 
 func kill_player():
+	head.viewport.set_update_mode(head.viewport.UPDATE_DISABLED)
+	head.lens_blue.visible = false
+	head.lens.visible = false
+	head.vp_sprite.visible = false
+	lensbreak.emitting = true
+	await get_tree().create_timer(0.5).timeout #0.9
 	health = 0
 	is_dead = true
 
 func spawn_FX():
-	lensbreak.emitting = true
+	pass #just for testing

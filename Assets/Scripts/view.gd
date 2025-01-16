@@ -113,6 +113,9 @@ func _physics_process(delta):
 		view_model_bob()
 
 func _input(event):
+	if player.is_dead:
+		return
+
 	if event is InputEventMouseMotion:
 		mouse_move = event.relative * 0.1
 		mouse_rotation_x -= event.relative.y * mouse_sensitivity
